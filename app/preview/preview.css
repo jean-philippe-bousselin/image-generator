@@ -1,0 +1,28 @@
+.form-box{
+  width: 496px;
+  margin: auto;
+}
+
+.export-wrapper {
+  border: dashed #DDD 2px;
+}
+
+.export-preview {
+  background: white;
+  color: rgb(130, 133, 135);
+  font-family: sans-serif;
+  padding: 5px;
+}
+
+.pledged, .funded, .togo {
+  float: left;
+  width: 33%;
+  color: #5cb85c;
+  text-align: center;
+}
+.text {
+  margin-bottom: 10px;
+}
+#render-wrapper {
+  display: none;
+}

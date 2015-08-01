@@ -1,0 +1,56 @@
+<div class="form-box" ng-controller="Controller">
+
+  <form>
+    <div class="form-group">
+      <label for="pledged">Pledged</label>
+      <div class="input-group">
+        <div class="input-group-addon">€</div>
+        <input id="pledged" type="text" class="form-control" ng-model="form.pledged" placeholder="Amount" value="{{ form.pledged | currency}}">
+      </div>
+      <label for="funded">Funded</label>
+      <div class="input-group">
+        <div class="input-group-addon">€</div>
+        <input id="funded" type="text" class="form-control" ng-model="form.funded" placeholder="Amount">
+      </div>
+      <label for="text">Text</label>
+      <textarea id="text" class="form-control" ng-model="form.text" rows="3"></textarea>
+    </div>
+  </form>
+
+
+  <h2>Preview</h2>
+  <div class="export-wrapper">
+    <div id="export-preview" class="export-preview">
+      <div class="meta">
+        <div class="text">
+          {{form.text}}
+        </div>
+        <div class="pledged">
+          Notwendig <br/> <b>{{form.pledged | currency:"€"}}</b>
+        </div>
+        <div class="funded">
+          Aktuell <br/> <b>{{form.funded | currency:"€"}}</b> ({{form.percent}}%)
+        </div>
+        <div class="togo">
+          Wir brauchen nor <br/> <b>{{form.amountLeft | currency:"€"}}</b>
+        </div>
+      </div>
+      <div style="clear:left;"></div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{form.percent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{form.percent}}%;">
+          <span class="sr-only">{{form.percent}}% Complete</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+  <button type="button" onclick="generateImage()" class="btn btn-primary">Download as png</button>
+
+  <div id="render-wrapper">
+    <div id="rendered-image"></div>
+    <a id="download" onclick="downloadCanvas(this, 'rendered-canvas', 'fundrasing_status.png');">Download as image</a>
+  </div>
+
+</div>
