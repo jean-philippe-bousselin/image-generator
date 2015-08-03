@@ -4,7 +4,11 @@ angular.module('myapp', []).controller('Controller', ['$scope', function($scope)
     funded: '0',
     percent: 0,
     amountLeft: 0,
-    text: ''
+    text: new Date().toLocaleDateString("de-DE", {
+        month: "2-digit",
+        day: "2-digit",
+        year: "numeric"
+    })
   };
 
   $scope.$watch('form.pledged', function(newValue, oldValue) {

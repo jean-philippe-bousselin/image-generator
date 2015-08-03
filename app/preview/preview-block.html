@@ -28,18 +28,18 @@
         <div class="pledged">
           Notwendig <br/> <b>{{form.pledged | currency:"€"}}</b>
         </div>
-        <div class="funded">
-          Aktuell <br/> <b>{{form.funded | currency:"€"}}</b> ({{form.percent}}%)
-        </div>
         <div class="togo">
-          Wir brauchen nor <br/> <b>{{form.amountLeft | currency:"€"}}</b>
+          Es fehlen <br/> <b>{{form.amountLeft | currency:"€"}}</b>
         </div>
       </div>
-      <div style="clear:left;"></div>
+      <div style="clear:both;"></div>
       <div class="progress">
         <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{form.percent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{form.percent}}%;">
           <span class="sr-only">{{form.percent}}% Complete</span>
         </div>
+      </div>
+      <div class="funded">
+        Wir haben <br/> <b>{{form.funded | currency:"€"}}</b> ({{form.percent}}%)
       </div>
     </div>
   </div>

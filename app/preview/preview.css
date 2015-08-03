@@ -14,14 +14,30 @@
   padding: 5px;
 }
 
-.pledged, .funded, .togo {
-  float: left;
-  width: 33%;
+.pledged, .funded {
   color: #5cb85c;
+}
+.pledged, .togo {
+  float: left;
   text-align: center;
 }
+.pledged {
+  float:left;
+  margin-left: 20px;
+}
+.togo {
+  float: right;
+  color: orange;
+  font-size: 20px;
+  margin-right: 20px;
+}
+.funded {
+  text-align: center;
+}
+
 .text {
-  margin-bottom: 10px;
+  margin: 0 0 10px;
+  padding: 5px 20px 0 20px;
 }
 #render-wrapper {
   display: none;
