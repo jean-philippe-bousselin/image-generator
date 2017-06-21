@@ -30,7 +30,11 @@ angular.module('myapp', []).controller('Controller', ['$scope', function($scope)
         $scope.form.percent = (($scope.form.funded * 100) / $scope.form.pledged).toFixed(2);
       }
 
-      if($scope.form.pledged <= $scope.form.funded) {
+      // must cast to float for comparison
+      var pledged = parseFloat($scope.form.pledged)
+      var funded = parseFloat($scope.form.funded)
+
+      if(pledged <= funded) {
         $scope.form.amountLeft = 0;
       } else {
         $scope.form.amountLeft = $scope.form.pledged - $scope.form.funded;
